@@ -67,7 +67,7 @@ Read the password stored in a file called `-` located in te home directory.
    cat ./"-"
    ```
 
-note:(the dash - normally represents stdin, so providing the relative path ./ forces the terminal to treat it as a file path)
+note: the dash - normally represents stdin, so providing the relative path ./ forces the terminal to treat it as a file path
 
 
 3. Password Secured: PK8...[REDACTED]
