@@ -14,7 +14,7 @@ Log into the game server using SSH and locate the initial flag.
 
 * `ssh`: Secure Shell client for logging into remote machines.
 * `ls`: List directory contents.
-* `cat`: Concatenate and display file content.
+* `cat`: Concatenate and display file contents.
 
 ### 💻 Solution
 
@@ -36,7 +36,7 @@ ls
 cat readme
 ```
 
-4. Password Secured: 6y2...[REDACTED]
+4. Password Secured: `[REDACTED]`
 
 ---
 
@@ -51,7 +51,7 @@ Read the password stored in a file called `-` located in the current working dir
 
 * **Special Filenames:** Relative paths `./-` to bypass command-line option processing.
 * `ls`: List directory contents.
-* `cat`: Concatenate and display file content.
+* `cat`: Concatenate and display file contents.
 
 ### 💻 Solution
 
@@ -68,7 +68,7 @@ cat ./-
 *(Note: The dash `-` normally represents stdin, so providing the relative path `./` forces the terminal to treat it as a literal file path).*
 
 
-3. Password Secured: PK8...[REDACTED]
+3. Password Secured: `[REDACTED]`
 
 --- 
 
@@ -80,7 +80,7 @@ Read the password stored in a file called `--spaces in this filename--` located 
 ### 🧠 Concepts & Commands
 * **Special Filenames (Dashes + Spaces):** Filenames starting with dashes (`--`) are incorrectly processed by CLI utilities as command options. Prepending a relative path (`./`) disables option processing, while double quotes (`""`) handle the spaces.
 * `ls`: List directory contents.
-* `cat`: Concatenate and display file content.
+* `cat`: Concatenate and display file contents.
 
 ### 💻 Solution
 
@@ -95,7 +95,7 @@ cat ./"--spaces in this filename--"
 ```
 *(Note: Because the filename begins with `--`, the terminal mistakes it for a command flag. Prefixes like `./` force the system to treat it as a path, while double quotes preserve the spaces as a single argument).*
 
-3. Password Secured: 7ZZ...[REDACTED]
+3. Password Secured: `[REDACTED]`
 
 ---
 
@@ -108,7 +108,7 @@ Read the password stored in a hidden file located in the `inhere` directory.
 * **Hidden Files:** In Linux, files that start with a dot (`.`) are hidden by default and do not appear in standard directory listings.
 * `ls`: List directory contents.
 * `cd`: Change current working directory.
-* `cat`: Concatenate and display file content.
+* `cat`: Concatenate and display file contents.
 
 ### 💻 Solution
 
@@ -134,7 +134,7 @@ cat ...Hiding-From-You
 ```
 *(Note: In this scenario, you can write the filename without double quotes or prefixes like `./` because the filename starts with a dot (`.`), which cannot be misinterpreted by the CLI terminal).*
 
-5. Password Secured: xzT...[REDACTED]
+5. Password Secured: `[REDACTED]`
 
 ---
 
@@ -150,8 +150,9 @@ Read the password stored in the only human-readable file in the `inhere` directo
 * `find`: Find specific files according to the given options in the working directory.
 * `-exec`: Native option of the `find` command which allows you to execute a second command on all files found.
 * `file`: Determines the file type of a given input.
+* `|`: Pipe operator, used to connect commands, redirecting the stdout of the first command to the stdin of the next command.
 * `grep`: Filters the specified content by keyword. 
-* `cat`: Concatenate and display file content.
+* `cat`: Concatenate and display file contents.
 
 ### 💻 Solution
 
@@ -176,7 +177,7 @@ find . -type f -exec file {} + | grep text
 cat ./-file07
 ```
 
-5. Password Secured: 6C7...[REDACTED]
+5. Password Secured: `[REDACTED]`
 
 ---
 
@@ -196,8 +197,9 @@ Read the password stored in the only human-readable file, which has 1033 bytes i
 * `!`: Native option of the `find` command which allows you to negate a filter. 
 * `-exec`: Native option of the `find` command which allows you to execute a second command on all files found.
 * `file`: Determines the file type of a given input.
+* `|`: Pipe operator, used to connect commands, redirecting the stdout of the first command to the stdin of the next command.
 * `grep`: Filters the specified content by keyword. 
-* `cat`: Concatenate and display file content.
+* `cat`: Concatenate and display file contents.
 
 ### 💻 Solution
 
@@ -222,7 +224,7 @@ find . -type f -size 1033c ! -executable -exec file {} + | grep text
 cat maybehere07/.file2
 ```
 
-5. Password Secured: pXa...[REDACTED]
+5. Password Secured: `[REDACTED]`
 
 ---
 
@@ -239,7 +241,7 @@ Read the password stored in the file owned by user bandit7 and group bandit6, wi
 * `-group`: Native option of the `find` command which allows you to specify the group who owns the file.
 * `-size`: Native option of the `find` command which allows you to specify the size of the target file.
 * `2>/dev/null`: A shell redirection mechanism that sends standard error (stderr) outputs (such as "permission denied") to the null device (`/dev/null`), effectively discarding them.  
-* `cat`: Concatenate and display file content.
+* `cat`: Concatenate and display file contents.
 
 ### 💻 Solution
 
@@ -254,7 +256,7 @@ find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
 cat /var/lib/dpkg/info/bandit7.password
 ```
 
-3. Password Secured: Bmn...[REDACTED]
+3. Password Secured: `[REDACTED]`
 
 ---
 
