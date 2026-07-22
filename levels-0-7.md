@@ -12,7 +12,7 @@ Log into the game server using SSH and locate the initial flag.
 
 ### 🧠 Concepts & Commands
 
-* `ssh`: Secure Shell client for logging into remote machines.
+* `ssh`: Secure shell client, which creates an encrypted session for logging into remote machines.
 * `ls`: List directory contents.
 * `cat`: Concatenate and display file contents.
 
