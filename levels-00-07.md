@@ -11,7 +11,6 @@ This document contains the documentation, methodology, and commands used to solv
 Log into the game server using SSH and locate the initial flag.
 
 ### 🧠 Concepts & Commands
-
 * `ssh`: Secure shell client, which creates an encrypted session for logging into remote machines.
 * `ls`: List directory contents.
 * `cat`: Concatenate and display file contents.
@@ -19,19 +18,16 @@ Log into the game server using SSH and locate the initial flag.
 ### 💻 Solution
 
 1. Connect to the host via SSH using the provided port and credentials:
-
 ```bash
 ssh bandit0@bandit.labs.overthewire.org -p 2220
 ```
 
 2. List the files in the home directory to find the readme:
-
 ```bash
 ls
 ```
 
 3. Read the content of the file to retrieve the password for the next level:
-
 ```bash
 cat readme
 ```
@@ -48,7 +44,6 @@ cat readme
 Read the password stored in a file called `-` located in the current working directory.
 
 ### 🧠 Concepts & Commands
-
 * **Special Filenames:** Relative paths `./-` to bypass command-line option processing.
 * `ls`: List directory contents.
 * `cat`: Concatenate and display file contents.
