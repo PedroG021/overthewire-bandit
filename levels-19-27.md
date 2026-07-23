@@ -275,7 +275,7 @@ Retrieve the bandit25 password by sending the bandit24 password and a secret num
 * `vim`: Command-line text editor.
 * `bash`: Executes a bash script.
 * `|`: Pipe operator, used to connect commands, redirecting the stdout of the first command to the stdin of the next command.
-* `ncat`: A command-line networking utility used to read from and write to network connections using TCP or UDP sockets, which can be used with `-l` flag to create listening ports.
+* `ncat`: A command-line networking utility used to read from and write to network connections using TCP or UDP sockets.
 
 ### 💻 Solution
 
@@ -304,9 +304,114 @@ bash /tmp/tmp.iIk7Z69ptL/script.bash | ncat localhost 30002
 
 ---
 
+## Level 25 -> Level 26
 
+### 🎯 Objective
+Retrieve the bandit26 password by discovering what's inside the home directory.
+*(Note: This level should be fairly easy logging from bandit25 to bandit26, the actual challenge begins when logging into bandit26, which does not use a /bin/bash shell).*
 
+### 🧠 Concepts & Commands
+* `ls`: Lists directory contents.
+* `cat`: Concatenates and displays file contents.
+* `mktemp -d`: Creates a temporary directory in `/tmp`, which gives you the necessary permissions to modify files.
+* `vim`: Command-line text editor.
+* `scp`: Copies files between hosts safely using the SSH protocol, which can be used with the `-P` flag to specify a connection port.
+* `ssh`: Secure Shell client, which creates an encrypted session for logging into remote machines. It can identify specific files with the `-i` flag to be used as the private key for authentication.
+* `more`: Text file visualizer which allows reading the file line by line avoiding the text to dash across the terminal until the end, can be used with text editors like `vim` via the `v` command to open a new interactive terminal. 
 
+### 💻 Solution
 
+1. List the files in the current working directory to verify what is inside:
+```bash
+ls
+```
 
+2. Since you realise there's an SSH key file called `bandit26.sshkey`, you can start the steps to download it to your local machine and use it as the bandit26 credential by creating a temporary directory:
+```bash
+mktemp -d
+```
 
+3. Use a text editor to copy the SSH key into a new file inside the previously created temporary directory:
+```bash
+vim /tmp/tmp.tvgRvlXNFn/sshkey.private
+```
+
+4. Before exiting the session, check which shell bandit26 uses. Since Linux stores default user shells in `/etc/passwd`, you can read it:
+```bash
+cat /etc/passwd
+```
+
+5. Identify bandit26 in the list, discover which path is allocated as its login shell script and read it:
+```bash
+cat /usr/bin/showtext
+```
+
+6. The script is made to create a shell which shows a text using the `more` visualizer and exit the session instantly after displaying the full text, as represented below:
+```bash
+#!/bin/sh
+
+export TERM=linux
+
+exec more ~/text.txt
+exit 0
+```
+*(Note: The important detail about this script is that it only exits the session after the full text is displayed).*
+
+7. Since you now know which shell bandit26 uses, exit the session and use `scp` to download the bandit26 SSH key to your local machine:
+```bash
+scp -P 2220 bandit25@bandit.labs.overthewire.org:/tmp/tmp.tvgRvlXNFn/sshkey.private .
+```
+
+8. Once you download the file, connect to bandit26 using the SSH key:
+```bash
+ssh -i sshkey.private bandit26@bandit.labs.overthewire.org -p 2220
+``` 
+
+9. You are automatically disconnected after the full text is shown. However, since the script uses the `more` visualizer, you can prevent it from rendering the full text instantly:
+```bash
+Reduce the terminal height to 2 lines using the mouse and reconnect to the server using the previous SSH command
+```
+*(Note: You will realise that now the text stops along the way and displays the `--More--` prompt).*
+
+10. Once `more` pauses, press `v` to open `vim`. Then set a new common shell like the previous levels and launch it:
+```bash
+:set shell=/bin/bash
+:shell
+```
+*(Note: The first command sets which shell will be used in the terminal, and the second command launches a new shell inheriting bandit26 privileges).*
+
+11. Now that you are bandit26 with a `/bin/bash` shell, you can read the bandit26 password file:
+```bash
+cat /etc/bandit_pass/bandit26
+```
+
+12. Password Secured: `[REDACTED]`
+*(Note: Do not exit the session after retrieving the password, you may use the current shell to get the bandit27 password).*
+
+---
+
+## Level 26 -> Level 27
+
+### 🎯 Objective
+Retrieve the bandit27 password by using the new interactive shell created in the previous level.
+
+### 🧠 Concepts & Commands
+* **Setuid**: A permission flag that allows a user to execute an executable file with the permission of the file owner.
+* `ls`: Lists directory contents.
+* `cat`: Concatenates and displays file contents.
+
+### 💻 Solution
+
+1. List the files in the current working directory to verify what is inside:
+```bash
+ls
+```
+
+2. Since there's a setuid binary inside called `bandit27-do`, which runs commands as bandit27, use it to read the bandit27 password:
+```bash
+./bandit27-do cat /etc/bandit_pass/bandit27
+```
+
+3. Password Secured: `[REDACTED]`
+
+---
