@@ -5,8 +5,6 @@ Este repositório documenta a conclusão dos 34 níveis do **OverTheWire: Bandit
 Os write-ups completos abaixo, com a metodologia detalhada de cada nível, estão em **inglês** 
 
 ---
-
-## 🇬🇧 Write-ups (English)
  
  # OverTheWire: Bandit Writeups
 
