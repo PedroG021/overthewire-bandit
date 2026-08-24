@@ -1,4 +1,14 @@
-﻿# OverTheWire: Bandit Writeups
+## 🇧🇷 Resumo em português
+
+Este repositório documenta a conclusão dos 34 níveis do **OverTheWire: Bandit**, uma sequência de desafios práticos de segurança ofensiva básica em ambiente Linux. Cada nível exige encontrar uma falha de configuração, permissão ou codificação pra conseguir acesso ao próximo, usando ferramentas de linha de comando como `grep`, `find`, `netcat`, `openssl`, `cron` e `nmap`.
+
+Os write-ups completos abaixo, com a metodologia detalhada de cada nível, estão em **inglês** 
+
+---
+
+## 🇬🇧 Write-ups (English)
+ 
+ # OverTheWire: Bandit Writeups
 
 This repository contains detailed documentations, technical methodologies, and commands used to solve the **OverTheWire: Bandit** wargame. The writeups are systematically segregated into thematic modules to ensure optimal readability and progressive conceptual tracking.
 
