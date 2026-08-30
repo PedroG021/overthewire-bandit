@@ -23,13 +23,13 @@ This repository is developed strictly for educational purposes, technical method
 
 ## 🗺️ Repository Index
 
-| Writeup File | Core Conceptual Focus |
+| Writeup File | Core Conceptual Focus | Status |
 | :--- | :--- | :--- |
-| [**levels-00-07.md**](./levels-00-07.md) | Fundamentals, File System Navigation, Object Properties & Special Filenames | 
-| [**levels-07-13.md**](./levels-07-13.md) | Stream Redirection, Data Processing, Encoding & Compression Utilities |
-| [**levels-13-19.md**](./levels-13-19.md) | Networking Architecture, SSH Remote Sessions & Shell Execution Hooks |
-| [**levels-19-27.md**](./levels-19-27.md) | Setuid Explotation, Local Privilege Escalation, Scripting Automation & Shell Escapes |
-| [**levels-27-33.md**](./levels-27-33.md) | Git Repository Exploitation & Restricted Environment Escapes |
+| [**levels-00-07.md**](./levels-00-07.md) | Fundamentals, File System Navigation, Object Properties & Special Filenames | `Completed` |
+| [**levels-07-13.md**](./levels-07-13.md) | Stream Redirection, Data Processing, Encoding & Compression Utilities | `Completed` |
+| [**levels-13-19.md**](./levels-13-19.md) | Networking Architecture, SSH Remote Sessions & Shell Execution Hooks | `Completed` |
+| [**levels-19-27.md**](./levels-19-27.md) | Setuid Explotation, Local Privilege Escalation, Scripting Automation & Shell Escapes | `Completed` |
+| [**levels-27-33.md**](./levels-27-33.md) | Git Repository Exploitation & Restricted Environment Escapes | `Completed` |
 
 ---
 
