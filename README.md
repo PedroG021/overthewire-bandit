@@ -1,14 +1,10 @@
-## 🇧🇷 Resumo em português
+🇺🇸 English | 🇧🇷 [Português](README.pt-BR.md)
 
-Este repositório documenta a conclusão dos 34 níveis do **OverTheWire: Bandit**, uma sequência de desafios práticos de segurança ofensiva básica em ambiente Linux. Cada nível exige encontrar uma falha de configuração, permissão ou codificação pra conseguir acesso ao próximo, usando ferramentas de linha de comando como `grep`, `find`, `netcat`, `openssl`, `cron` e `nmap`.
+# OverTheWire: Bandit Writeups
 
-Os write-ups completos abaixo, com a metodologia detalhada de cada nível, estão em **inglês** 
+## Overview
 
----
- 
- # OverTheWire: Bandit Writeups
-
-This repository contains detailed documentations, technical methodologies, and commands used to solve the **OverTheWire: Bandit** wargame. The writeups are systematically segregated into thematic modules to ensure optimal readability and progressive conceptual tracking.
+This repository documents the completion of all 34 levels of **OverTheWire: Bandit**, a sequence of hands-on challenges in basic offensive security on a Linux environment. Each level requires finding a configuration, permission, or encoding flaw to gain access to the next one, using command-line tools such as `grep`, `find`, `netcat`, `openssl`, `cron`, and `nmap`.
 
 ---
 
@@ -28,14 +24,14 @@ This repository is developed strictly for educational purposes, technical method
 | [**levels-00-07.md**](./levels-00-07.md) | Fundamentals, File System Navigation, Object Properties & Special Filenames | `Completed` |
 | [**levels-07-13.md**](./levels-07-13.md) | Stream Redirection, Data Processing, Encoding & Compression Utilities | `Completed` |
 | [**levels-13-19.md**](./levels-13-19.md) | Networking Architecture, SSH Remote Sessions & Shell Execution Hooks | `Completed` |
-| [**levels-19-27.md**](./levels-19-27.md) | Setuid Explotation, Local Privilege Escalation, Scripting Automation & Shell Escapes | `Completed` |
+| [**levels-19-27.md**](./levels-19-27.md) | Setuid Exploitation, Local Privilege Escalation, Scripting Automation & Shell Escapes | `Completed` |
 | [**levels-27-33.md**](./levels-27-33.md) | Git Repository Exploitation & Restricted Environment Escapes | `Completed` |
 
 ---
 
 ## 🧠 Core Engineering Competencies
 
-* **File System Auditing:** Deep validation of object attributes, permissions matrix, hidden allocations, and handling of malformed/dashing filenames.
+* **File System Auditing:** Deep validation of object attributes, permissions matrix, hidden allocations, and handling of malformed/dash-prefixed filenames.
 * **Data Processing Pipelines:** Compounding string manipulation utilities to execute high-efficiency filtering, parsing, and stream parsing on dense data targets.
 * **Cryptographic & Network Logistics:** Mapping remote systems, operating secure terminal connections via asymmetric keys, and debugging raw data flows across network sockets.
 * **Privilege Escalation & Automation Auditing:** Auditing scheduled system routines (cron jobs), exploiting `setuid` binary misconfigurations, and engineering bash scripts to automate network brute-forcing payloads.
